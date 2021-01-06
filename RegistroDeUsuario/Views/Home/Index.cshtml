@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Logout", "Registro", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        <div class="nav navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <nav class="icon-bar"></nav>
+                        <nav class="icon-bar"></nav>
+                        <nav class="icon-bar"></nav>
+                    </button>
+                    @Html.ActionLink("App Cadastro", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Configuração", "Registrar", "Registro")</li>
+                    </ul>
+                    <ul class="nav navbar-right">
+                        <li class="btn btn-block"><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--div foto-->
+        <div class="clearfix" style="width:1250px; height:80px; 
+            border: 1px solid black;margin-top:450px;margin-left:-100px;">
+
+        </div>
+
+        <!--<h4>@HttpContext.Current.User.Identity.Name</h4>-->
+
+    }
+}
+
+<!--
+
+<div class="jumbotron">
+
+    <div class="navbar-collapse collapse">
+        <ul class="row">
+            <li>@Html.ActionLink("Início", "Index", "Home")</li>
+            <li>@Html.ActionLink("Configuração", "Registrar", "Registro")</li>
+        </ul>
+        <ul>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
+        </ul>
+        <ul>
+            <li>@HttpContext.Current.User.Identity.Name</li>
+        </ul>
+    </div>
+
+</div>
+
+    <div class="row">
+    <div class="col-md-3">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-2">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-1">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+
+</div>
+-->
